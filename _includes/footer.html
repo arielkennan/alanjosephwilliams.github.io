@@ -1,0 +1,111 @@
+  <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/open-counter-help.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/holder.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/application.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/ajw.js"></script>
+
+
+<!-- Would be nice to have a liquid operation here to prevent loading of extra scripts of pages with no search (Tutorials, Best Practices, Gloassary?) -->
+<script src="{{ site.baseurl }}/assets/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ site.baseurl }}/assets/js/mustache.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ site.baseurl }}/assets/js/date.format.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ site.baseurl }}/assets/js/URI.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ site.baseurl }}/assets/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 8000
+    });
+  });
+
+  $('.rams').popover();
+
+  var FILTER_ARRAY = ["print", "digital", "policy", "procurement"];
+
+  var currentFilters = [];
+
+  $('.filter').click(function (e) {
+    var target = $(e.target);
+    if (target.hasClass("active")) {
+      hideContent(e, target);
+    }
+    else {
+      $(".filter.active").removeClass("active");
+      console.log("ACTIVATED");
+      toggleContent(e);
+    };
+  });
+
+  function toggleContent(e) {
+    console.log("toggleContent triggered")
+
+    button = $(e.target)
+    filter = button.attr("id");
+
+    $("#search-results").show();
+    if (filter == "print") {
+      $(".print").show();
+      $(".digital").hide();
+      $(".policy").hide();
+      $(".procurement").hide();
+      console.log("print items shown");
+    } else if (filter == "digital") {
+      $(".print").hide();
+      $(".digital").show();
+      $(".policy").hide();
+      $(".procurement").hide();
+      console.log("digital items shown");
+    } else if (filter == "policy") {
+      $(".print").hide();
+      $(".digital").hide();
+      $(".policy").show();
+      $(".procurement").hide();
+      console.log("policy items shown");
+    } else if (filter == "procurement") {
+      $(".print").hide();
+      $(".digital").hide();
+      $(".policy").hide();
+      $(".procurement").show();
+      console.log("procurement items shown");
+    } else {
+      console.log("none of four categories selected")
+    }
+  };
+
+  function hideContent(e, target) {
+    console.log( "hideContent called, the target is: ")
+    console.log(target);
+    id = target.attr("id");
+    console.log(id);
+    $("#print").removeClass("active");
+    console.log(target);
+    $("#search-results").hide();
+  }
+
+</script>
+<!-- Retrive URL param for city account, save as cookie, use to change nav links -->
+
+<script type="text/javascript">var z1o0zgsc1noh62w;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'codeforamerica',
+'formHash':'z1o0zgsc1noh62w',
+'autoResize':true,
+'height':'4039',
+'async':true,
+'host':'wufoo.com',
+'header':'show',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { z1o0zgsc1noh62w = new WufooForm();z1o0zgsc1noh62w.initialize(options);z1o0zgsc1noh62w.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>

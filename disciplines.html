@@ -1,0 +1,61 @@
+---
+layout: showcase
+title: Showcase
+slug: showcase
+lead: "Browse case studies from designers in goverment everywhere."
+exclude_from_search: true
+base_url: "../"
+---
+
+
+<!-- Overview
+================================================== -->
+
+
+  <div class="faq-list">
+    <div class="col-md-6 faq-column" id="left">
+      <div class="faq-section">
+        <h3>Interaction Design</h3>
+        {% for post in site.categories.basic %}
+        <div class="post_info">
+          <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="faq-section">
+        <h3>User Experience Design</h3>
+        {% for post in site.categories.metrics %}
+        <div class="post_info">
+          <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-6 faq-column" id="right">
+      <div class="faq-section">
+        <h3>Information Architecture</h3>
+        {% for post in site.categories.support %}
+        <div class="post_info">
+          <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="faq-section">
+        <h3>User Research</h3>
+        {% for post in site.categories.configuration %}
+        <div class="post_info">
+          <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="faq-section">
+        <h3>Graphic Design</h3>
+        {% for post in site.categories.zoning %}
+        <div class="post_info">
+          <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+<!--   </div> -->

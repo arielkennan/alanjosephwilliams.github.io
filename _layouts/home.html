@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include header.html %}
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    {% include nav-main.html %}
+    {% include headline.html %}
+
+    <div class="container bs-docs-container faq-container">
+      <div class="row">
+        <div class="col-md-12" role="main">
+          {{ content }}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="contact-info">
+              <strong>Get in Touch</strong>
+              <br />
+              <a href="https://twitter.com/design_gov" class="white">@design_gov</a>
+              <br />
+              <a href="/designgov-2/contact.html" class="white">Drop us a note</a>
+              <br />
+              
+            </p>
+          </div>
+          <div class="col-md-8">
+            <div class="container text-center">`
+              <br/>
+              <small class="about"><em>Designing Government serves as an introduction to design for public servants and a gathering place for the civic design community. It provides an overview of design disciplines, a collection of case studies demonstrating the use of design in government, and key techniques for bringing design to bear in the public sector through hiring, procurement, and policy.</em></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+      {% include footer.html %}
+
+    </body>
+  </html>
